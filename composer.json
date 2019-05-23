@@ -1,7 +1,10 @@
 {
     "require-dev": {
         "phpunit/phpunit": "^5",
-        "google/cloud-tools":"^0.6",
+        "google/cloud-tools":"^0.6"
+
+    },
+    "require":{
         "google/cloud-datastore": "^1.9"
     }
 }
