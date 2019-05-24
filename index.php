@@ -62,27 +62,11 @@ $query = $down_datastore->query()->kind( $kind );
 <h1 style="padding:1em;">A Form in the Cloud</h1>
 <p style="padding:1em;">This is the Simple Webapplication for the Arbeitsauftrag AA2-a und Abgabe Präsentation</p>
 
-<section>
-    <h2 style="padding:1em;">Existing entries:</h2>
-    <ul class="list-group">
-		<?php
-		foreach ( $down_datastore->runQuery( $down_datastore->query()->kind( $kind ) ) as $entity ) {
-			echo '<li><ul>';
-			echo '<li class="list-group-item"><strong>First name: </strong>' . $entity["first_name"] . '</li>';
-			echo '<li class="list-group-item"><strong>Last name: </strong>' . $entity["last_name"] . '</li>';
-			echo '<li class="list-group-item"><strong>Street: </strong>' . $entity["street"] . '</li>';
-			echo '<li class="list-group-item"><strong>Street No: </strong>' . $entity["street_no"] . '</li>';
-			echo '<li class="list-group-item"><strong>ZIP: </strong>' . $entity["zip"] . '</li>';
-			echo '<li class="list-group-item"><strong>City: </strong>' . $entity["city"] . '</li>';
-			echo '<li class="list-group-item"><strong>Email: </strong>' . $entity["email"] . '</li>';
-			echo '<li class="list-group-item"><strong>Created: </strong>' . $entity["created"] . '</li>';
+<div class="container">
 
+<div class="row">
 
-			echo '</ul></li>';
-		}
-		?>
-    </ul>
-</section>
+<div class="col">
 
 <section style="padding:1em;">
     <h2 style="padding:1em;">Add your own address:</h2>
@@ -134,6 +118,39 @@ $query = $down_datastore->query()->kind( $kind );
 
     </form>
 </section>
+
+</div>
+
+<div class="col">
+<section>
+    <h2 style="padding:1em;">Existing entries:</h2>
+    <ul class="list-group">
+		<?php
+		foreach ( $down_datastore->runQuery( $down_datastore->query()->kind( $kind ) ) as $entity ) {
+			echo '<li><ul>';
+			echo '<li class="list-group-item"><strong>First name: </strong>' . $entity["first_name"] . '</li>';
+			echo '<li class="list-group-item"><strong>Last name: </strong>' . $entity["last_name"] . '</li>';
+			echo '<li class="list-group-item"><strong>Street: </strong>' . $entity["street"] . '</li>';
+			echo '<li class="list-group-item"><strong>Street No: </strong>' . $entity["street_no"] . '</li>';
+			echo '<li class="list-group-item"><strong>ZIP: </strong>' . $entity["zip"] . '</li>';
+			echo '<li class="list-group-item"><strong>City: </strong>' . $entity["city"] . '</li>';
+			echo '<li class="list-group-item"><strong>Email: </strong>' . $entity["email"] . '</li>';
+			echo '<li class="list-group-item"><strong>Created: </strong>' . $entity["created"] . '</li>';
+
+
+			echo '</ul></li>';
+		}
+		?>
+    </ul>
+</section>
+</div>
+
+</div>
+
+</div>
+
+
+
 </body>
 </html>
 
