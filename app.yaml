@@ -1,8 +1,17 @@
 # Use the PHP 7.3 runtime (BETA) by replacing "php72" below with "php73"
 runtime: php72
+service: cico-webapp
 
 # Defaults to "serve index.php" and "serve public/index.php". Can be used to
 # serve a custom PHP front controller (e.g. "serve backend/index.php") or to
 # run a long-running PHP script as a worker process (e.g. "php worker.php").
 #
 # entrypoint: serve index.php
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: automatic
+  max_instances: 3
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
+  target_cpu_utilization: 0.75
